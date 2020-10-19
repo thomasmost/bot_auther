@@ -181,7 +181,7 @@ router.get(/\//, async (ctx) => {
     ctx.redirect('/sessions/connect');
   } else {
     const parsedData = JSON.parse(data as string);
-    ctx.body = 'You are signed in: ' + inspect(parsedData.screen_name);
+    ctx.body = 'You are signed in as: ' + inspect(parsedData.screen_name);
   }
 });
 
