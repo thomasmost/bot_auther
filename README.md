@@ -22,7 +22,7 @@ TWITTER_APP_CONSUMER_SECRET=your_secret_here
 
 **REMEMBER: Never check your keys into git!** You can get your keys from https://developer.twitter.com/.
 
-3. Set up three-legged OAuth in your Twitter app and set the expected callback url matches your route in the server; by default it's `http://localhost:8080/sessions/callback`
+3. Set up three-legged OAuth in your Twitter app and set the expected callback url to match your route in the server; by default it's `http://localhost:8080/sessions/callback`
 
 ### Running the 'Auth-er'
 1. After cloning the repo, run `npm install`
