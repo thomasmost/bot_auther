@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+
 import bodyParser from 'koa-bodyparser';
 import Koa from 'koa';
 import Router from 'koa-router';
@@ -5,15 +7,22 @@ import { OAuth } from 'oauth';
 import session from 'koa-session';
 import { inspect } from 'util';
 
-// Get your credentials here: https://dev.twitter.com/apps
-const _twitterConsumerKey = 'twitterConsumerKey';
-const _twitterConsumerSecret = 'twitterConsumerSecret';
+dotenv.config();
+
+// Get your credentials here: https://developer.twitter.com/
+const { TWITTER_APP_CONSUMER_KEY, TWITTER_APP_CONSUMER_SECRET } = process.env;
+
+if (!TWITTER_APP_CONSUMER_KEY || !TWITTER_APP_CONSUMER_SECRET) {
+  throw Error(
+    'Missing required configuration; did you remember to add your .env file?',
+  );
+}
 
 const consumer = new OAuth(
   'https://twitter.com/oauth/request_token',
   'https://twitter.com/oauth/access_token',
-  _twitterConsumerKey,
-  _twitterConsumerSecret,
+  TWITTER_APP_CONSUMER_KEY,
+  TWITTER_APP_CONSUMER_SECRET,
   '1.0A',
   'http://127.0.0.1:8080/sessions/callback',
   'HMAC-SHA1',
