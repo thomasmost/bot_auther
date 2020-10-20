@@ -1,4 +1,4 @@
-# bot_auther
+# Bot Auther
 A lightweight Twitter Authenticator server for quickly obtaining API keys
 
 ## Why
