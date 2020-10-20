@@ -35,3 +35,9 @@ TWITTER_APP_CONSUMER_SECRET=your_secret_here
 Questions? Go ahead and [open an issue!](https://github.com/thomasmost/bot_auther/issues/new)
 
 Happy automating!
+
+## Credits
+
+Major thanks go to [Juan González](https://gist.github.com/JuanJo4) for the original OAuth implementation in Express. This tool ports his work to Koa and adds a basic interface, documentation, and security recommendations.
+
+Here's the original gist this was based on: https://gist.github.com/JuanJo4/e408d9349b403523aeb00f262900e768
