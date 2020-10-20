@@ -1,6 +1,6 @@
 {
   "name": "bot_auther",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A lightweight Twitter Authenticator server for quickly obtaining API keys",
   "main": "app.ts",
   "dependencies": {

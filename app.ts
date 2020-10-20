@@ -154,8 +154,12 @@ router.get('/sessions/callback', async function (ctx) {
   }
 });
 
+router.post('/sessions/clear', async function (ctx) {
+  ctx.session = null;
+  ctx.status = 204;
+});
+
 router.get(/\//, async (ctx) => {
-  console.log('wildcard');
   if (!ctx.session) {
     ctx.status = 500;
     ctx.body = 'Missing session';
@@ -181,7 +185,21 @@ router.get(/\//, async (ctx) => {
     ctx.redirect('/sessions/connect');
   } else {
     const parsedData = JSON.parse(data as string);
-    ctx.body = 'You are signed in as: ' + inspect(parsedData.screen_name);
+    ctx.body = `<div>
+    You are signed in as: ${inspect(parsedData.screen_name)}
+    <div style="padding: 20px 0;">
+      <script>
+      function clearSession() {
+        fetch('/sessions/clear', {
+          method: 'POST'
+        }).then(function() {
+          alert('Successfully reset! Refresh the page to authenticate a new account.')
+        })
+      }
+      </script>
+      <button onclick="clearSession()">Clear Session</button>
+    </div></div>
+`;
   }
 });
 

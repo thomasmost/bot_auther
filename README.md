@@ -29,3 +29,8 @@ TWITTER_APP_CONSUMER_SECRET=your_secret_here
 2. You can then start the server locally by running `npm start`
 3. Log into your bot's twitter account and then navigate to `localhost:8080`
 4. You'll be directed back to Twitter's authorization page; hit 'Authorize' to retrieve keys to that account.
+5. The application's `/home` route will display the keys for your currently logged in Twitter account. Navigate to `/` and hit 'Reset Session' before repeating the process with a new bot.
+
+Questions? Go ahead and [open an issue!](https://github.com/thomasmost/bot_auther/issues/new)
+
+Happy automating!
