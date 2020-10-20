@@ -46,6 +46,9 @@ router.get('/home', async (ctx) => {
   <div>
     Access Secret: ${ctx.session?.oauthAccessTokenSecret}
   </div>
+  <div style="margin-top: 20px">
+    <a href="/">I've written these down!</a>
+  </div>
 </div>
 `;
   return;
