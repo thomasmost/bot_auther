@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 
-import bodyParser from 'koa-bodyparser';
 import Koa from 'koa';
 import Router from 'koa-router';
 import { OAuth } from 'oauth';
@@ -31,9 +30,7 @@ const consumer = new OAuth(
 const app = new Koa();
 const router = new Router();
 
-app.use(bodyParser());
-
-app.keys = ['some secret hurr'];
+app.keys = ['your session secret here'];
 
 app.use(session(app));
 
