@@ -2,7 +2,7 @@
 A lightweight Twitter Authenticator server for quickly obtaining API keys
 
 ## Why
-A lot of bot authors (hehe) just make a new developer account for each bot. This is impractical if orchestrating multiple bots in conjunction with one another.
+A lot of bot authors just make a new developer account for each bot. This is impractical if orchestrating multiple bots in conjunction with one another.
 
 ## How to Use
 Your bot army awaits! Let's walk through it.
@@ -10,11 +10,11 @@ Your bot army awaits! Let's walk through it.
 ### Setup Dependencies
 You will need just a couple things:
 1. Node and NPM
-3. A Twitter developer account
+2. A Twitter developer account
 
 ### Instance Setup
 1. After cloning the repo, run `npm install`
-2. Now add an `.env` file in the repository and fill in your application consumer keys like so:
+2. Now add a `.env` file in the repository and fill in your application consumer keys like so:
 ```env
 TWITTER_APP_CONSUMER_KEY=your_key_here
 TWITTER_APP_CONSUMER_SECRET=your_secret_here
@@ -25,12 +25,13 @@ TWITTER_APP_CONSUMER_SECRET=your_secret_here
 3. Set up three-legged OAuth in your Twitter app and set the expected callback url to match your route in the server; by default it's `http://localhost:8080/sessions/callback`
 
 ### Running the 'Auth-er'
-1. After cloning the repo, run `npm install`
-2. You can then start the server locally by running `npm start`
-3. Log into your bot's twitter account and then navigate to `localhost:8080`
-4. You'll be directed back to Twitter's authorization page; hit 'Authorize' to retrieve keys to that account.
-5. The application's `/home` route will display the keys for your currently logged in Twitter account.
-6. Navigate to `/` and hit 'Reset Session' before repeating the process with a new bot.
+Make sure you've completed the steps in [Instance Setup](#instance-setup). You're now ready to authenticate some bots!
+
+1. Start the server locally by running `npm start`
+2. Log into your bot's twitter account and then navigate to `localhost:8080`
+3. You'll be directed back to Twitter's authorization page; hit 'Authorize' to retrieve keys to that account.
+4. The application's `/home` route will display the keys for your currently logged in Twitter account.
+5. Navigate to `/` and hit 'Reset Session' before repeating the process with a new bot.
 
 Questions? Go ahead and [open an issue!](https://github.com/thomasmost/bot_auther/issues/new)
 
